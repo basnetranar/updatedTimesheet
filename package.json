@@ -1,0 +1,17 @@
+{
+  "name": "interview",
+  "version": "1.0.0",
+  "description": "Timesheet Dashboard",
+  "main": "app.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "author": "Ranar basnet",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-sass": "^3.1.0"
+  }
+}

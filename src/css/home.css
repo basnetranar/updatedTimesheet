@@ -1,0 +1,114 @@
+.selectOption {
+  margin-top: 0.7em;
+  margin-left: 15px;
+  color: #8f8a8a; }
+  .selectOption #mainSelect {
+    margin-left: 0.5em;
+    margin-right: 0.8em;
+    padding: 0.2em; }
+    .selectOption #mainSelect option {
+      color: #656161; }
+  .selectOption .optionalSelect {
+    padding: 0.2em;
+    visibility: hidden;
+    color: #656161; }
+  .selectOption button {
+    position: absolute;
+    right: 3em;
+    color: #656161;
+    border-radius: 1%; }
+  .selectOption #Content {
+    display: none;
+    position: absolute;
+    background-color: #d4fafc;
+    top: 0em;
+    right: 17em;
+    width: 40%;
+    height: 55%;
+    overflow: auto; }
+    .selectOption #Content #notValid {
+      margin-left: 2.8em;
+      margin-top: 0.6em;
+      font-size: 1em;
+      color: red; }
+    .selectOption #Content .form-group {
+      position: absolute;
+      left: 2.8em;
+      top: 1.9em;
+      font-size: 1em; }
+      .selectOption #Content .form-group .form-control {
+        margin-bottom: 1em; }
+      .selectOption #Content .form-group .hoursNotSubmitted {
+        list-style-type: none; }
+        .selectOption #Content .form-group .hoursNotSubmitted .form-control {
+          display: inline-block;
+          width: 4.6em;
+          margin-right: 0.8em; }
+      .selectOption #Content .form-group #submitBtn1 {
+        position: absolute;
+        left: 1.4em;
+        border-radius: 5%;
+        padding: 0.3em;
+        color: white; }
+      .selectOption #Content .form-group #cancelBtn1 {
+        position: absolute;
+        border-radius: 5%;
+        padding: 0.3em;
+        right: 1.4em;
+        color: white; }
+
+.displayChart {
+  position: absolute;
+  max-height: 16em;
+  overflow: auto;
+  background-color: white;
+  left: 1em;
+  right: 1em;
+  top: 3.2em; }
+  .displayChart ul {
+    list-style-type: none; }
+    .displayChart ul li {
+      display: inline-block;
+      margin-left: 6em; }
+
+#submitOption .timesheetRecord {
+  list-style-type: none; }
+  #submitOption .timesheetRecord li {
+    display: inline-block;
+    margin-top: 16.1em;
+    color: #6c6a6c;
+    font-size: 1em;
+    font-style: serif; }
+  #submitOption .timesheetRecord .contactButtons {
+    background-color: #54d651;
+    color: white;
+    border-radius: 6%;
+    border: none;
+    padding: 0.5em;
+    font-size: 0.8em; }
+  #submitOption .timesheetRecord #btn1 {
+    position: relative;
+    left: 45em; }
+  #submitOption .timesheetRecord #btn2 {
+    position: relative;
+    left: 46em; }
+
+.displayTable {
+  position: absolute;
+  background-color: white;
+  left: 1em;
+  right: 1em;
+  bottom: 2em;
+  top: 21.5em;
+  overflow: auto; }
+  .displayTable .tableHead {
+    background-color: #f7f8f8;
+    color: #696d6d; }
+    .displayTable .tableHead #search {
+      width: 120px; }
+  .displayTable #deleteClient {
+    color: red;
+    cursor: pointer; }
+  .displayTable #editClient {
+    color: blue;
+    cursor: pointer; }

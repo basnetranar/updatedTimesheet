@@ -1,0 +1,43 @@
+.combinedHeader {
+  list-style-type: none;
+  margin-bottom: 0.1em;
+  margin-top: 1em;
+  padding-bottom: 0.2em;
+  color: #908e8e;
+  font-size: 1em; }
+  .combinedHeader li {
+    display: inline-block; }
+  .combinedHeader .mainHeading {
+    margin-left: 16%;
+    font-size: 1.2em;
+    font-style: serif; }
+  .combinedHeader .designerLogo {
+    float: right;
+    margin-right: 6%; }
+
+#dashboard {
+  position: absolute;
+  top: 3em;
+  left: 3%;
+  background-color: #1951fa;
+  width: 16%;
+  height: 97%; }
+  #dashboard nav a {
+    position: absolute;
+    text-decoration: none;
+    left: 1em;
+    top: 0.7em;
+    font-size: 1.3em;
+    font-family: serif;
+    color: white; }
+
+#mainBody {
+  position: absolute;
+  left: 19%;
+  top: 3em;
+  bottom: 0;
+  right: 3%;
+  height: 97%;
+  width: 78%;
+  background-color: #fdf2fd;
+  overflow: auto; }

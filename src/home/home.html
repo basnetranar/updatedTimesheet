@@ -1,0 +1,109 @@
+<!-- Filter with All Timesheet and Clients as options -->
+<div class="selectOption">
+          <label for="mainSelect">Filter by</label>
+          <select id="mainSelect" ng-change="hideOptionalSelect()" ng-model="mainSelectOption">
+            <option value="allTimeSheet" selected>All timesheets</option>
+            <option value="Client" >Client</option>
+          </select>
+
+          <!-- secondary select which is optional, only visible when client selected -->
+          <select class="optionalSelect"  ng-options="option.name for option in timesheetLog" 
+              ng-model="selectedClient"
+              id="optionSelect"
+              ng-change="clientSelected()">
+          </select>
+
+          <button class="collapsible bg-secondary" ng-click="showForm()" id="addTimesheet">Add TimeSheet</button>
+
+          <!-- Collapsible form to input data -->
+            <div class="content" id="Content">
+              <div id="notValid">{{invalidForm}}</div>
+              <form class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" class="form-control" ng-model="inputName">
+
+                    <label for="">Timesheet Start</label>
+                    <input type="date" id="startDate" class="form-control" ng-model="startTime">
+
+                    <label for="endDate">Timesheet End</label>
+                    <input type="date" id="endDate" class="form-control" ng-model="endTime">
+
+                    <label for="submittedHours">Submitted Hours</label>
+                    <input type="number" id="submittedHours" class="form-control" ng-model="submittedHours">
+                    
+                    <label for="hoursnotsubmitted">Hours Not Submitted</label>
+                    <input type="number" id="hoursnotsubmitted" class="form-control" ng-model="notSubmittedHours">
+
+                    <section class="hoursNotSubmitted">
+
+                        <label for="ontime">Still on Time</label>
+                        <input type="number" id="ontime" class="form-control" ng-model="onTime">
+
+                        <label for="overdue">Overdue</label>
+                        <input type="number" id="overdue" class="form-control" ng-model="overDue">
+
+                    </section>
+
+                    <label for="host">Host</label>
+                    <input type="text" id="host" class="form-control" ng-model="host">
+
+                    <label for="name">Agency</label>
+                    <input type="text" id="agency" class="form-control" class="form-control" ng-model = "agency">
+
+                    <button class="btn btn-success " ng-click="formSubmitted()" id="submitBtn1">Submit</button>
+                     <button class="btn btn-success  " ng-click="showForm()" id="cancelBtn1">Cancel</button>
+                  </form>
+              
+            </div>
+</div>
+
+        <!-- Chart for the data -->
+        <div class="displayChart" id="doughnutChart">
+          <ul>
+            <li>
+              <canvas id="canvas1" width = "340" height = "190"ng-model="doughnutCanvas1" chart-click = 'clickedCanvas1()'>
+              </canvas>
+            </li>
+              <li>
+                <canvas id="canvas2"  width = "340" height = "190" ng-model="doughnutCanvas2" chart-click = 'clickedCanvas2()'>
+                </canvas>
+              </li>
+          </ul>
+        </div>
+
+        <!-- Table info and contacts button -->
+        <div id="submitOption">
+          <ul class="timesheetRecord">
+            <li id="timesheetInfo"> All timesheet {{byClient}}not yet submitted</li>
+            <li><input type="button" id = "btn1" class="contactButtons" value="Send SMS"></li>
+            <li><input type="button" id="btn2" class="contactButtons" value="Send Email" ng-click="mailClient()"></li>  
+          </ul>
+        </div>
+
+        <!-- Table for the client -->
+        <section class="displayTable">
+          <table class="table">
+            <thead class="tableHead">
+              <tr>
+                <th class="col-md-1"><input type="checkbox" name="allSelect" value="all"></th>
+                <th class="col-md-3">Worker</th>
+                <th class="col-md-3">TimeSheet</th>
+                <th class="col-md-2">Host</th>
+                <th class="col-md-2">Agency</th>
+                <th class="col-md-1" ><input type="text" id = "search" ng-model = "searchField" placeholder="&#x1F50E; Search"></th>
+              </tr>
+            </thead>
+            <tbody> 
+              <!-- Search Field .. looks through the entire table -->
+                <tr ng-repeat="client in timesheetLog | filter:searchField">
+
+                  <td class="col-md-1"><input type="checkbox" name="allSelect" value="all"></td>
+                  <td class="col-md-3">{{client.name}}</td>
+                  <td class="col-md-3">{{client.timeSheetStart }} - {{client.timeSheetEnd}}</td>
+                  <td class="col-md-2">{{client.host}}</td>
+                  <td class="col-md-2">{{client.agency}}</td>
+                  <td> <span id="editClient" ng-click = "editClient($index)">&#9998;</span>&nbsp;&nbsp;<span id="deleteClient" ng-click="removeClient($index)">X</span></td>
+                </tr>
+            </tbody>
+          </table>
+        </section>
